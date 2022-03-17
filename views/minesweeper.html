@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=800px, initial-scale=1.0">
+
+
+    <title>Minesweeper</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Iceberg&family=Sonsie+One&display=swap" rel="stylesheet">    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="game.js"></script>
+  </head>
+  
+  <body>
+    <div class="panel panel-newOrJoin">
+      <button class="panel-item new-game">
+        Create a new room
+      </button>
+      <button class="panel-item join-game">
+        Join game
+      </button>
+    </div>
+    <div class="panel panel-game">
+      <div class="panel-item message1"></div>
+      <div class="panel-item message2"></div>
+    </div>
+    <div class="panel panel-join">
+      <input type="text" class="panel-item input-room-id" />
+      <button class="panel-item enter-room">Enter</div>
+    </div>
+    <div class="cell-container no-select">
+    </div>
+    <div class="template hidden">
+      <div class="cell-row">
+      </div>
+      <div class="cell">
+        <span></span>
+      </div>
+    </div>
+    <audio id="audio-move-flag" class="hidden">
+      <source src="/ding.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="audio-move-normal" class="hidden">
+      <source src="/tak.wav" type="audio/wav">
+    </audio>
+    <audio id="audio-ohno" class="hidden">
+      <source src="/ohno.mp3" type="audio/mpeg">
+    </audio>
+  </body>
+</html>
+
+<!-- 
+&#9873; black flag ⚑
+&#9872; white flag ⚐
+&#128163; bomb 💣
+
+ -->
